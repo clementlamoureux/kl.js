@@ -11,10 +11,10 @@ See [TODO](TODO.md) file for contributing
 ### HOW TO INSTALL
 
 ```
-npm install
+npm install kl.js
 ```
 ```
-bower install
+bower install kl.js
 ```
 
 ## BASIC USAGE
