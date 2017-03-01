@@ -144,7 +144,7 @@ namespace Kl {
                     }
                 }
             };
-            req.send(data);
+            req.send(JSON.stringify(data));
         }
     }
 

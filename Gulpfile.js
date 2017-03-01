@@ -14,15 +14,11 @@ gulp.task('compile:js', function (cb) {
     .pipe(gulp.dest('dist'))
 });
 
-gulp.task('build:js', function (cb) {
-  pump([
-      gulp.src('dist/kljs.js'),
-      uglify(),
-      rename("kljs.min.js"),
-      gulp.dest('dist')
-    ],
-    cb
-  );
+gulp.task('build:js', ['compile:js'], function () {
+  return gulp.src('dist/kljs.js')
+    .pipe(uglify())
+    .pipe(rename("kljs.min.js"))
+    .pipe(gulp.dest('dist'));
 });
 
 var browserSync = require('browser-sync');
@@ -39,11 +35,11 @@ function browserSyncInit(baseDir, files, browser) {
     ghostMode: false
   });
 }
-gulp.task('watch', function(){
+gulp.task('watch', function () {
   return gulp.watch('kljs.ts', ['compile:js']);
 });
 
-gulp.task('build', ['compile:js', 'build:js']);
+gulp.task('build', ['build:js']);
 
 gulp.task('serve', ['watch'], function () {
   browserSyncInit('.', [
