@@ -41,7 +41,7 @@ You could also apply style :
 ```javascript
 Kl.Bind(".testlink", {
     "content": "My Link text",
-    "href": "http://mywebsite.com"
+    "href": "http://mywebsite.com",
     "style": {
         "color": "blue",
         "textDecoration": "none",

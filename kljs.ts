@@ -115,7 +115,7 @@ namespace Kl {
                     let map = mapping(data[i]);
                     if (map && typeof map === 'object') {
                         if (!document.querySelectorAll(elementSelector + ':nth-child(' + (i + 1) + ')').length) {
-                            new Duplicate(elementSelector, data.length - 1);
+                            new Duplicate(document.querySelectorAll(elementSelector)[0], data.length - 1);
                         }
                         setTimeout(function () {
                             new Bind(elementSelector + ':nth-child(' + (i + 1) + ')', map);
