@@ -113,7 +113,7 @@ var Kl;
                     var map_1 = mapping(data[i]);
                     if (map_1 && typeof map_1 === 'object') {
                         if (!document.querySelectorAll(elementSelector + ':nth-child(' + (i + 1) + ')').length) {
-                            new Duplicate(document.querySelectorAll(elementSelector)[0], data.length - 1);
+                            new Duplicate(elementSelector, data.length - 1);
                         }
                         setTimeout(function () {
                             new Bind(elementSelector + ':nth-child(' + (i + 1) + ')', map_1);
