@@ -1,6 +1,8 @@
 <p align="center"><img width="300"src="http://www.clementlamoureux.fr/assets/img/kljs.png"></p>
 
+<a href="https://travis-ci.org/clementlamoureux/kl.js" target="_blank">
 ![Travis CI](https://travis-ci.org/clementlamoureux/kl.js.svg?branch=master)
+</a>
 
 # Kl.JS
 
@@ -103,7 +105,7 @@ Kl.Bind(".testlink", data, function(item){
     return {
       "href": item.url
     };
-);
+});
 ````
 
 The result will be :
@@ -127,7 +129,7 @@ Kl.Bind(".testlink", data, function(item){
         "opacity": 1
       }
     }
-);
+});
 ```
 
 #### Ajax requests

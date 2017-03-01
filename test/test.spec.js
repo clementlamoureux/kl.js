@@ -84,3 +84,14 @@ describe('Complex DOM', function () {
     expect(document.querySelectorAll('.testlink ul>li:not(.withclass)')[0].innerHTML).toBe('Test');
   });
 });
+describe("Ajax test", function() {
+  it("ajax call", function() {
+    Kl.Ajax('GET', 'http://ip-api.com/json', {}, function (data) {
+      //expect(data.lat).toBeDefined();
+      expect(data.lat).toBe('test');
+      setTimeout(function(){
+        done();
+      }, 200);
+    });
+  });
+});
