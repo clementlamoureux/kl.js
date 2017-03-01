@@ -43,7 +43,7 @@ gulp.task('watch', function(){
   return gulp.watch('kljs.ts', ['compile:js']);
 });
 
-gulp.task('build', ['build:js']);
+gulp.task('build', ['compile:js', 'build:js']);
 
 gulp.task('serve', ['watch'], function () {
   browserSyncInit('.', [
