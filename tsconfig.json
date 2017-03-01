@@ -1,7 +1,6 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "out": "kljs.js",
-        "watch": true
+        "out": ".tmp/kljs.js"
     }
 }
