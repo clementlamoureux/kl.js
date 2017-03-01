@@ -87,7 +87,6 @@ describe('Complex DOM', function () {
 describe("Ajax test", function() {
   it("ajax call", function() {
     Kl.Ajax('GET', 'http://ip-api.com/json', {}, function (data) {
-      //expect(data.lat).toBeDefined();
       expect(data.lat).toBe('test');
       setTimeout(function(){
         done();

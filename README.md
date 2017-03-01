@@ -1,8 +1,9 @@
 <p align="center"><img width="300"src="http://www.clementlamoureux.fr/assets/img/kljs.png"></p>
 
-<a href="https://travis-ci.org/clementlamoureux/kl.js" target="_blank">
-![Travis CI](https://travis-ci.org/clementlamoureux/kl.js.svg?branch=master)
-</a>
+[![Build Status](https://travis-ci.org/clementlamoureux/kl.js.svg?branch=master)](https://travis-ci.org/clementlamoureux/kl.js)
+[![npm version](https://badge.fury.io/js/kl.js.svg)](https://badge.fury.io/js/kl.js)
+[![Bower version](https://badge.fury.io/bo/kl.js.svg)](https://badge.fury.io/bo/kl.js)
+
 
 # Kl.JS
 
