@@ -109,7 +109,8 @@ namespace Kl {
         }
     }
     export class LoopBind {
-        constructor(elementSelector, data, mapping?) {
+        constructor(elementSelector, data, mapping?, removed?) {
+            let tmp = [];
             for (let i = 0; i < data.length; i++) {
                 if (mapping && typeof mapping === 'function') {
                     let map = mapping(data[i]);
@@ -119,6 +120,15 @@ namespace Kl {
                         }
                         setTimeout(function () {
                             new Bind(elementSelector + ':nth-child(' + (i + 1) + ')', map);
+                        }, 0);
+                    }
+                }
+            }
+            if (document.querySelectorAll(elementSelector).length > data.length) {
+                if (removed && typeof removed === 'function') {
+                    for (let j = (document.querySelectorAll(elementSelector).length - data.length) + 1; j < document.querySelectorAll(elementSelector).length; j++) {
+                        setTimeout(function () {
+                            new Bind(elementSelector + ':nth-child(' + (j + 1) + ')', removed());
                         }, 0);
                     }
                 }

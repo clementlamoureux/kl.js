@@ -107,7 +107,8 @@ var Kl;
     }());
     Kl.Duplicate = Duplicate;
     var LoopBind = (function () {
-        function LoopBind(elementSelector, data, mapping) {
+        function LoopBind(elementSelector, data, mapping, removed) {
+            var tmp = [];
             var _loop_1 = function (i) {
                 if (mapping && typeof mapping === 'function') {
                     var map_1 = mapping(data[i]);
@@ -123,6 +124,18 @@ var Kl;
             };
             for (var i = 0; i < data.length; i++) {
                 _loop_1(i);
+            }
+            if (document.querySelectorAll(elementSelector).length > data.length) {
+                if (removed && typeof removed === 'function') {
+                    var _loop_2 = function (j) {
+                        setTimeout(function () {
+                            new Bind(elementSelector + ':nth-child(' + (j + 1) + ')', removed());
+                        }, 0);
+                    };
+                    for (var j = (document.querySelectorAll(elementSelector).length - data.length) + 1; j < document.querySelectorAll(elementSelector).length; j++) {
+                        _loop_2(j);
+                    }
+                }
             }
         }
         return LoopBind;
